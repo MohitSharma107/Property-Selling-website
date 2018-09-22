@@ -12,3 +12,5 @@ https://css-tricks.com/snippets/css/complete-guide-grid/
 gh- pages comming soon
 
 COMING SOON
+
+--browser=firefox

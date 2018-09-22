@@ -14,6 +14,12 @@ $color-grey-dark-2: #6D5D4B;
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; //1200px  so 1200px/16px = 75em and 1em = 16px . bcz browser default font size is 16.
+$bp-large: 62.5em; //1000px  so 1000px/16px = 62.5em and 1em = 16px
+$bp-medium: 50em; //800px  so 800px/16px = 50em and 1em = 16px
+$bp-small: 37.5em; //600px  so 600px/16px = 37.5em and 1em = 16px
+
 *,
 *::before,
 *::after {
@@ -25,6 +31,10 @@ $font-display: 'Josefin Sans', sans-serif;
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 10px/16px = 62.5%   --> 1rem = 10px
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -40,6 +50,20 @@ body {
   //grid-template-rows: 80vh signifies the heght of the row will be 80vh, for the features section as we know the when we decrease the width of website the row size automatically increases, so min-content, for story section(testimonial) we know that as we increase/decrease the size of the row, the row size also increase or decrease so width of the row is functionally dependent on viewport width(vw) and for last three we want to fit the content as the size of the row increases or decreses.
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
 
+  //naming of grid lines is professional thing.
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    // grid-template-rows: 6rem calc(100vh - 6rem) min-content min-content min-content repeat(3, min-content); instead of this we can write.
+    // 6rem and calc(100vh - 6rem) that we decided from our own and rest of the rows will come in inplicit grid and will have the size of the content in that row. just like min content.
+    grid-template-rows: 6rem calc(100vh - 6rem)
+
+  }
+  
 }
