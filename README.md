@@ -9,8 +9,10 @@ http://grid.malven.co/
 2.
 https://css-tricks.com/snippets/css/complete-guide-grid/
 
-gh- pages comming soon
+For gh-pages dont forget to include these in package.json file.
 
-COMING SOON
+ "deploy": "gh-pages  -d dist"
+
+ "homepage": "https://MohitSharma107.github.io/Nexter-website",
 
 --browser=firefox
