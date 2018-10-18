@@ -16,3 +16,5 @@ For gh-pages dont forget to include these in package.json file.
  "homepage": "https://MohitSharma107.github.io/Nexter-website",
 
 --browser=firefox
+
+you can design modern layout easily with the combination of both the modules.
